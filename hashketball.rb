@@ -16,4 +16,6 @@ def game_hash => {
 },
 
 def num_points_scored (player_name)
-  [:game_hash]
+  game_hash.values.each do |team|
+    team [:players].each do |player|
+      return player [:points] if player
